@@ -1,0 +1,21 @@
+PC should be able to form an associantion with access pointA
+but not with Access Point-N or Access Point_B_G
+since they have the PT-Host-NM-1W-A module installed
+
+Laptop and Server can associate with Access Point-N
+but not Access Point-A 
+since they have the PT-Host-NM-1W module installed
+
+Test Access PT-A
+a. Ping PC1 from PC0. (Success)
+b. Ping Laptop and Server from PC0. (failed)
+
+Test Access PT-N
+a. Ping Server from Laptop. (Success)
+b. Ping PC0 and PC1 form Laptop. (failed)
+
+Test Access PT_B_G
+a. Turn on Port1 on Access PT_B_G and 
+turn off Port1 on Access PT-N
+Laptop and Server0 should associate with Access PT_B_G
+b. Ping Server0 from Laptop. (success)

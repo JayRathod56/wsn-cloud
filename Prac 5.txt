@@ -1,0 +1,55 @@
+commands for RO
+
+en
+conf t
+hostname R0
+int f0/0
+ip addr 192.168.1.1 255.255.255.0
+no shut
+exit
+int s2/0
+ip addr 192.168.2.1 255.255.255.252
+no shut
+exit
+
+##Note
+en - means enable
+conf t - means configure terminal
+hostname - changes device(in this case router) name
+int - interface
+exit - goes 1 step back
+no shut - means no shutdown
+
+commands for R1
+
+en
+conf t
+hostname R1
+int f0/0
+ip addr 192.168.3.1 255.255.255.0
+no shut
+exit
+int s2/0
+ip addr 192.168.2.2 255.255.255.252
+no shut
+exit
+
+go to PC0 > Desktop > ipconfiguration
+ip addr - 192.168.1.2
+subnet mask - 255.255.255.0
+default gateway - 192.168.1.1
+
+go to PC1 > Desktop
+ip addr - 192.168.3.2
+subnet mask - 255.255.255.0
+default gateway - 192.168.3.1
+
+
+go to R0
+ip route 192.168.3.0 255.255.255.0 192.168.2.2
+
+go to R1
+ip route 192.168.1.0 255.255.255.0 192.168.2.1
+
+now you can ping one computer form another
+
